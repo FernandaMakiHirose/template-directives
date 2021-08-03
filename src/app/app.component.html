@@ -1,0 +1,41 @@
+<div *jvIf="flag">Test</div>
+
+<button (click)="onClick()">Click</button>
+
+<hr />
+
+<jv-child [info]="template" [list]="list"></jv-child>
+
+<!--
+  o conteúdo dentro do ng-template não é renderizado, no html da página ele renderiza um comentário
+  
+  let-item: vai pegar o item para ser renderizado
+
+  #template é o nome que deu para o ng-template
+-->
+<ng-template let-item let-function="func" #template>
+  <!--
+    quando clicar em um dos itens o item vai ser printado na tela
+  -->
+  <div (click)="function(item)">{{ item }}</div>
+</ng-template>
+
+<hr />
+
+<!--vai iterar pela lista e para cada item vai criar uma nova div
+renderiza o segundo elemento na tela: A B C 
+-->
+<div *jvFor="let item from list; let index = index">
+  {{ item }} {{ index }}
+</div>
+
+<hr />
+
+<!--passa o valor atual-->
+<div [jvSwitch]="value">
+  <!--passa os casos, quando for A passa um valor, quando for B passa outro valor, por apresentar um asterísco significa que está sendo envolto por um ng-template-->
+  <div *jvSwitchCase="'A'">AAA</div>
+  <div *jvSwitchCase="'B'">BBB</div>
+</div>
+
+<button (click)="toggle()">Click</button>

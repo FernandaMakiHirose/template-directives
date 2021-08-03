@@ -22,3 +22,10 @@ Criei um projeto onde manipulei o DOM usando o NgIf, o qual pega um template e o
 - O injetor ModuleInjector: é para cada módulo, o Angular cria um injetor para cada módulo e componente. 
 - Tokens: Precisam existir em runtime, Não podem ser tipos primitivos, interfaces, funções, etc. Na maioria das vezes tokens são classes. Para definir um token que não é uma classe criamos InjectionTokens.
 - Providers: Determina o valor de um dado token. Normalmente instanciando uma classe. É possível prover um valor literal para um token usando o useValue. Utilize o useExisting para prover um valor já existente. Utilize o useFactory para prover uma função que retorna o valor a ser provido. O provider que for executado por último vai sobrescrever. Se definir um provider com `multi: true` os valores vão ter um único token. 
+- Os decorators @Optional e @Self modificam como a injeção de dependências funciona. 
+
+## ModuleWithProviders
+- Um wrapper em volta de um NgModule associa ele com providers. 
+- Função, normalmente estática, dentro do módulo que aceita parâmetros. 
+- Deve retornar um imediato. 
+- Com o ModuleWithProviders o RouterModule consegue fazer a implementação de múltiplos providers de forma interna. Assim, dentro do AppModule é possível ter um RouterModule forRoot e definir algumas rotas. Nos Features Modules é possível utilizar o RouterModule forFeature e passar mais rotas. Quanto utiliza-se tanto o forRoot quanto o forChild e passa as rotas que quer definir como parâmetro, o RouterModule pega essas rotas passadas e utiliza elas como providers, internamente marcando o multi como true.

@@ -15,16 +15,17 @@ Criei um projeto onde manipulei o DOM usando o NgIf, o qual pega um template e o
 - É um padrão de design.
 - Com o DI, a classe pede a dependência de um provedor externo ao invés de instanciar manualmente.  
 - Dependências são serviços ou objetos que uma classe precisa para executar alguma ação. 
-- Exemplo: se no Angular tivesse um componente e a única forma dele se comunicar com o resto da aplicação fosse por input ou output não seria muito bom. O injetor de dependência implementa uma estrutura de chave (token) ou valor, assim o componente consegue pedir para o injetor o valor desse token, mas não fazemos assim normalmente porque o token e o valor são o mesmo (Syntactic Sugar).
-- Para injetar uma entrada no injetor de dependências usamos os providers.
+- Exemplo: se no Angular tivesse um componente e a única forma dele se comunicar com o resto da aplicação fosse por input ou output não seria muito bom. O injetor de dependência implementa uma estrutura de chave (token) ou valor. No Angular adicionamos o token no construtor e o injetor sabe colocar o valor certo para a propriedade. Assim o componente consegue pedir para o injetor o valor desse token, mas não fazemos assim normalmente porque o token e o valor são o mesmo (Syntactic Sugar). 
+- Para injetar uma entrada no injetor de dependências usamos os providers com o @Component ou o @NgModule.
 
 ## Injetores
 - Fonte responsável por armazenar a estrutura chave/valor dos providers. Instancia classes e injeta a instância nos componentes que pedem por ela.
-- Funcionam de forma hierárquica e se comunicam se baixo para cima.
-- O injetor ModuleInjector: é para cada módulo, o Angular cria um injetor para cada módulo e componente. 
+- Funcionam de forma hierárquica e se comunicam de baixo para cima.
+- O injetor ModuleInjector: é para cada módulo, o Angular cria um injetor de para cada módulo e componente. 
+- ElementInjector.
 
 ## Tokens
-- Precisam existir em runtime, Não podem ser tipos primitivos, interfaces, funções, etc. Na maioria das vezes tokens são classes. Para definir um token que não é uma classe criamos InjectionTokens.
+- Precisam existir em tempo de runtime, Não podem ser tipos primitivos, interfaces, funções, etc. Na maioria das vezes tokens são classes. Para definir um token que não é uma classe criamos InjectionTokens.
 
 ## Providers
 - Determina o valor de um dado token. Normalmente instanciando uma classe. É possível prover um valor literal para um token usando o useValue. Utilize o useExisting para prover um valor já existente. Utilize o useFactory para prover uma função que retorna o valor a ser provido. O provider que for executado por último vai sobrescrever. Se definir um provider com `multi: true` os valores vão ter um único token. 

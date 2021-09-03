@@ -4,6 +4,9 @@ Criei um projeto onde manipulei o DOM usando o NgIf, o qual pega um template e o
 - [Rode o projeto no StackBlitz (sem precisar executar comandos)](https://stackblitz.com/edit/template-directives)
 - [Veja apenas o projeto final](https://template-directives.stackblitz.io/)
 
+## Requisitos
+
+
 ## Dicas extras
 - Como foi feita a implementação da comunicação entre a diretiva de Switch e a diretiva de SwitchCase? Utilizando injeção de dependência.
 - O que é ViewContainerRef? Uma referência a um pedaço da View e que é usado para manipular o DOM. 
@@ -36,9 +39,3 @@ Criei um projeto onde manipulei o DOM usando o NgIf, o qual pega um template e o
 - Função, normalmente estática, dentro do módulo que aceita parâmetros. 
 - Deve retornar um imediato. 
 - Com o ModuleWithProviders o RouterModule é possível fazer a implementação de múltiplos providers de forma interna. Assim, dentro do AppModule é possível ter um RouterModule forRoot e definir algumas rotas. Nos Features Modules é possível utilizar o RouterModule forFeature e passar mais rotas. Quanto utiliza-se tanto o forRoot quanto o forChild e passa as rotas que quer definir como parâmetro, o RouterModule pega essas rotas passadas e utiliza elas como providers, internamente marcando o `multi: true`.
-
-## Sobre a Autora
-Oi, eu sou a Fernanda! Estou aqui para contribuir com meu conhecimento e espero poder ajudar no desenvolvimento profissional de cada um de vocês.
-
-[![Linkedin Badge](https://img.shields.io/badge/-Fernanda_Maki_Hirose-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fernanda-maki-hirose-801117208/)](https://www.linkedin.com/in/fernanda-maki-hirose-801117208/)  [![Gmail Badge](https://img.shields.io/badge/-femahi2020@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:femahi2020@gmail.com)](mailto:femahi2020@gmail.com)
-

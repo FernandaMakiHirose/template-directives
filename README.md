@@ -5,7 +5,9 @@ Criei um projeto onde manipulei o DOM usando o NgIf, o qual pega um template e o
 - [Veja apenas o projeto final](https://template-directives.stackblitz.io/)
 
 ## Requisitos
-
+- IDE
+- TypeScript
+- Navegador
 
 ## Dicas extras
 - Como foi feita a implementação da comunicação entre a diretiva de Switch e a diretiva de SwitchCase? Utilizando injeção de dependência.

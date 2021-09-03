@@ -9,6 +9,9 @@ Criei um projeto onde manipulei o DOM usando o NgIf, o qual pega um template e o
 - TypeScript
 - Navegador
 
+## Licença
+Distribuido sob a licença MIT License. Veja `LICENSE` para mais informações.
+
 ## Dicas extras
 - Como foi feita a implementação da comunicação entre a diretiva de Switch e a diretiva de SwitchCase? Utilizando injeção de dependência.
 - O que é ViewContainerRef? Uma referência a um pedaço da View e que é usado para manipular o DOM. 
